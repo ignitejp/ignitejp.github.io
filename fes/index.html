@@ -1,1 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>市ヶ谷祭参加応募ページ - 市ヶ谷鯖</title>
+  <link rel="stylesheet" href="styles.css">
 
+
+
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 20px;
+}
+
+.container {
+  margin-bottom: 20px;
+}
+
+.container h1 {
+  font-size: 24px;
+}
+
+.container p {
+  font-size: 16px;
+}
+
+.container a {
+  display: block;
+  margin-top: 10px;
+  font-size: 18px;
+  color: blue;
+  text-decoration: none;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+#applicationForm {
+  margin-top: 30px;
+  display: none;
+}
+
+#applicationForm h2 {
+  font-size: 24px;
+}
+
+#applicationForm p {
+  font-size: 16px;
+}
+
+#applicationForm form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#applicationForm label {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+#applicationForm input {
+  padding: 8px;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#applicationForm button {
+  margin-top: 20px;
+}
+
+
+/*まずはお決まりのボックスサイズ算出をborer-boxに */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 62.5%;/*rem算出をしやすくするために*/
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+a.btn-gradient {
+  -webkit-transform: skew(-15deg);
+  transform: skew(-15deg);
+  color: #fff;
+  border-radius: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(#2af598), to(#009efd));
+  background-image: -webkit-linear-gradient(left, #2af598 0%, #009efd 100%);
+  background-image: linear-gradient(90deg, #2af598 0%, #009efd 100%);
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
+}
+
+a.btn-gradient:hover {
+  -webkit-transform: skew(0);
+  transform: skew(0);
+  color: #fff;
+  -webkit-box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .1);
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>市ヶ谷祭 参加応募ページ</h1>
+
+    <img src="ilo1.jpg" width="300px" height="200px">
+    <img src="ilo2.jpg" width="300px" height="200px">
+    <img src="ilo3.jpg" width="300px" height="200px">
+    <img src="ilo4.jpg" width="300px" height="200px">
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/gQ3tRVZKvsg?si=2LTA_9X79pC3y4tn" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <h2>ルール</h2>
+    <p>市ヶ谷祭 -Season1- 開催日：2023年8月6日<br>
+        【イベントの説明】市ヶ谷ルークが主催する市ヶ谷祭というイベントです<br>
+        【使用デバイス】スマートフォン/PS4/Windows/Nintendo Switch(非推奨)<br>
+        【イベントルール】<br>
+        ・荒らし行為は厳禁<br>
+        ・管理者の指示に従うこと<br>
+        ・自分勝手な行動、勝手なアイテムの使用は厳禁<br>
+        【参加条件】13歳以上<br>
+        【賞金について】<br>イベント開催後、イベント中に撮影された画像について投票を行います。<br>
+        入賞者上位一名または二名につき、最大2000円を賞与致します。<br>
+        【エントリー方法】<br>
+        ①esportsport <a href="https://esportsport.jp/member/register" target="_blank">ここ</a>より、プレイヤー会員登録を行ってください。<br>
+        （既に会員登録されている方は<a href="https://esportsport.jp/member/login" target="_blank">ログイン</a>してください）<br>
+        ※システム上、12歳以下の方はご自身での登録ができません。<br>
+        ②大会ページより、エントリーへ進んでください。<br>
+        
+        <h2>ログインできたら下記のボタンよりENTRYをお願いします!</h2>
+    
+        <a href="https://esportsport.jp/event/1783/0601f55fcb" target="_blank" class="btn btn-gradient"><span>PUSH！</span></a><br>
+
+        ③エントリーが完了すると、ご登録いただいたメールアドレスに<br>
+        「【esportsport】イベントエントリーのお知らせ」という<br>
+        タイトルのメールが届きますので大切に保管ください。<br>
+        ※ログインした際のマイページでもエントリー状況を確認することができます。</p>
+
+        <p>市ヶ谷ルークのチャンネル登録と高評価をお願いします！</p>
+
+    <a href="https://www.youtube.com/@rook_yt" target="_blank">市ヶ谷ルークのYouTubeチャンネル</a>
+
+    <h2>開催時は以下のライブ配信を行います！</h2>
+    <iframe width="300" height="200" src="https://www.youtube.com/embed/RpZmjCdFS6U?si=YDNplpx-vymLGpaE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+
+</body>
+</html>
