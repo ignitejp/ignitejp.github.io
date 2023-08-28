@@ -1,1 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@700&display=swap" rel="stylesheet">
+  <title>令和の虎風の画面作成サイト - IGniteJapan</title>
+  <style>
+    body {
+      text-align: center;
+      padding: 50px;
+      font-family: 'Zen Old Mincho', serif;
+    }
+    #imageContainer {
+      position: relative;
+      width: 1280px;
+      height: 720px;
+      background-color: black;
+      display: none;
+    }
+    #text1, #text2 {
+      font-size: 50px;
+      color: white;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #text1{
+        width: 1000px;
+        font-size: 68px;
+        font-family: 'Zen Old Mincho', serif;
+    }
+
+    #text2 {
+        font-family: 'Zen Old Mincho', serif;
+        transform: none;
+      font-size: 48px;
+      color: rgb(255, 255, 255);
+      position: absolute;
+top: 600px;
+      right: 65px;
+text-align: right;
+z-index: 6;
+    }
+    #textInput1, #textInput2 {
+      display: block;
+      margin: 20px auto;
+    }
+    #downloadButton {
+      display: none;
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="imageContainer">
+    <div id="text1"></div>
+    <div class="textarea2">
+    <div id="text2"></div></div>
+  </div>
+  <input type="text" id="textInput1" placeholder="主題を入力して">
+  <input type="text" id="textInput2" placeholder="志願者名を入力して">
+  <button id="updateButton">テキストを更新</button>
+  <a id="downloadLink" download="reiwa_ignitejapan.png">
+    <button id="downloadButton">画像をダウンロード</button>
+    
+  </a>
+
+
+  <script>
+    const imageContainer = document.getElementById('imageContainer');
+    const textElement1 = document.getElementById('text1');
+    const textElement2 = document.getElementById('text2');
+    const textInputElement1 = document.getElementById('textInput1');
+    const textInputElement2 = document.getElementById('textInput2');
+    const updateButton = document.getElementById('updateButton');
+    const downloadLink = document.getElementById('downloadLink');
+    const downloadButton = document.getElementById('downloadButton');
+
+    updateButton.addEventListener('click', () => {
+      const inputText1 = textInputElement1.value;
+      const inputText2 = textInputElement2.value;
+      textElement1.textContent = inputText1;
+      textElement2.textContent = inputText2;
+
+      // Create an image from the div content
+      const canvas = document.createElement('canvas');
+      canvas.width = 1280;
+      canvas.height = 720;
+      const context = canvas.getContext('2d');
+      context.fillStyle = 'black';
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Text 1
+
+      context.font = '68px "Zen Old Mincho", serif';
+      context.fillStyle = 'white';
+      context.textAlign = 'center';
+      wrapText(context, inputText1, canvas.width / 2, canvas.height / 2 + 15, 750);
+
+      // Text 2
+
+      context.font = '48px "Zen Old Mincho", serif';
+      context.fillStyle = 'white';
+      context.textAlign = 'right';
+      context.fillText(inputText2, canvas.width - 100, canvas.height - 90);
+
+      const imageDataUrl = canvas.toDataURL('image/png');
+
+      // Update the image source and make the download button visible
+      downloadLink.href = imageDataUrl;
+      downloadButton.style.display = 'block';
+      imageContainer.style.display = 'block';
+    });
+
+     // Function to wrap text within a certain width
+     function wrapText(context, text, x, y, maxWidth) {
+      let words = text.split(' ');
+      let line = '';
+      for (let word of words) {
+        let testLine = line + word + ' ';
+        let metrics = context.measureText(testLine);
+        let testWidth = metrics.width;
+        if (testWidth > maxWidth && line !== '') {
+          context.fillText(line, x, y);
+          line = word + ' ';
+          y += 60; // Adjust line height
+        } else {
+          line = testLine;
+        }
+      }
+      context.fillText(line, x, y);
+    }
+
+    const element = document.querySelector('text1'); // your-selectorは対象の要素を指定するセレクターに置き換えてください
+const words = element.innerText.split(' ');
+let line = '';
+let newContent = '';
+
+words.forEach((word) => {
+  if ((line + word).length > 750) { // 750は改行する幅の最大値です
+    newContent += `${line}<br>`;
+    line = '';
+  }
+  line += `${word} `;
+});
+
+newContent += line;
+element.innerHTML = newContent;
+
+
+
+</script>
+</body>
+</html>
 
